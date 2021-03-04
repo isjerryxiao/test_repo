@@ -32,6 +32,6 @@ jobs:
         sudo apt update -qq
         sudo apt install -y socat
         while [ ! -e /tmp/stopsocat ]; do
-        socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:$HOST
+        socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:$HOST || true
         sleep 1;
         done
